@@ -6,9 +6,15 @@ import json
 
 # from function_app import my_second_function
 from function_app import randuints
+from testUtils import TestUtils
 
 
 class TestFunction(unittest.TestCase):
+    # testing on this platform established that an uint is 4 bytes (32 bits)
+    def __init__(self, methodName: str = "runTest") -> None:
+        super().__init__(methodName)
+        self.testUtils = TestUtils()
+
     def test_randuints_0(self):
         # Construct a mock HTTP request.
         count = 0
@@ -36,6 +42,7 @@ class TestFunction(unittest.TestCase):
         result_end = len(body)
         result = body[result_start:result_end]
         self.assertEqual(1, len(result.split(", ")))
+        self.testUtils.TestRange(result.split(", "), 32)
 
     def test_randuints_10(self):
         # Construct a mock HTTP request.
@@ -62,6 +69,7 @@ class TestFunction(unittest.TestCase):
         result_end = len(body)
         result = body[result_start:result_end]
         self.assertEqual(count, len(result.split(", ")))
+        self.testUtils.TestRange(result.split(", "), 32)
 
     def test_randuints_string(self):
         # Construct a mock HTTP request.
@@ -88,10 +96,11 @@ class TestFunction(unittest.TestCase):
         result_end = len(body)
         result = body[result_start:result_end]
         self.assertEqual(count, len(result.split(", ")))
+        self.testUtils.TestRange(result.split(", "), 32)
 
     def test_randuints_json(self):
         # Construct a mock HTTP request.
-        count = 10
+        count = 1000
         req = func.HttpRequest(
             method="GET",
             body=None,
@@ -106,3 +115,4 @@ class TestFunction(unittest.TestCase):
         print(f"jsonbody is a {type(jsonbody)}")
 
         self.assertEqual(count, len(jsonbody))
+        self.testUtils.TestRange(jsonbody, 32)

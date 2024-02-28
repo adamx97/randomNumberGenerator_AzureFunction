@@ -1,0 +1,375 @@
+Overview
+
+1) Create the Function App
+az functionapp create --resource-group randomnumberfunction --consumption-plan-location eastus2 --runtime python --runtime-version 3.10 --functions-version 4 --name randomnumberfunction --os-type linux --storage-account cs21003bffd86c2582c
+
+-- see output below
+
+2) Deploy Function project to Azure
+func azure functionapp publish <APP_NAME>
+func azure functionapp publish RandomNumberFunction
+-- see output below
+
+1) Create the Function App
+az functionapp create --resource-group randomnumberfunction --consumption-plan-location eastus2 --runtime python --runtime-version 3.10 --functions-version 4 --name randomnumberfunction --os-type linux --storage-account cs21003bffd86c2582c
+
+Your Linux function app 'randomnumberfunction', that uses a consumption plan has been successfully created but is not active until content is published using Azure Portal or the Functions Core Tools.
+Application Insights "randomnumberfunction" was created for this Function App. You can visit https://portal.azure.com/#resource/subscriptions/80753b76-ae60-4af6-b6f7-ba564bc88e3e/resourceGroups/randomnumberfunction/providers/microsoft.insights/components/randomnumberfunction/overview to view your Application Insights component
+App settings have been redacted. Use `az webapp/logicapp/functionapp config appsettings list` to view.
+{
+  "availabilityState": "Normal",
+  "clientAffinityEnabled": false,
+  "clientCertEnabled": false,
+  "clientCertExclusionPaths": null,
+  "clientCertMode": "Required",
+  "cloningInfo": null,
+  "containerSize": 0,
+  "customDomainVerificationId": "84E2F6599CFEF05AD250078A5D23A42F6DF1F1AAB27841CEE54AB92C9260A0C6",
+  "dailyMemoryTimeQuota": 0,
+  "daprConfig": null,
+  "defaultHostName": "randomnumberfunction.azurewebsites.net",
+  "enabled": true,
+  "enabledHostNames": [
+    "randomnumberfunction.azurewebsites.net",
+    "randomnumberfunction.scm.azurewebsites.net"
+  ],
+  "extendedLocation": null,
+  "hostNameSslStates": [
+    {
+      "certificateResourceId": null,
+      "hostType": "Standard",
+      "ipBasedSslResult": null,
+      "ipBasedSslState": "NotConfigured",
+      "name": "randomnumberfunction.azurewebsites.net",
+      "sslState": "Disabled",
+      "thumbprint": null,
+      "toUpdate": null,
+      "toUpdateIpBasedSsl": null,
+      "virtualIPv6": null,
+      "virtualIp": null
+    },
+    {
+      "certificateResourceId": null,
+      "hostType": "Repository",
+      "ipBasedSslResult": null,
+      "ipBasedSslState": "NotConfigured",
+      "name": "randomnumberfunction.scm.azurewebsites.net",
+      "sslState": "Disabled",
+      "thumbprint": null,
+      "toUpdate": null,
+      "toUpdateIpBasedSsl": null,
+      "virtualIPv6": null,
+      "virtualIp": null
+    }
+  ],
+  "hostNames": [
+    "randomnumberfunction.azurewebsites.net"
+  ],
+  "hostNamesDisabled": false,
+  "hostingEnvironmentProfile": null,
+  "httpsOnly": false,
+  "hyperV": false,
+  "id": "/subscriptions/80753b76-ae60-4af6-b6f7-ba564bc88e3e/resourceGroups/randomnumberfunction/providers/Microsoft.Web/sites/randomnumberfunction",
+  "identity": null,
+  "inProgressOperationId": null,
+  "isDefaultContainer": null,
+  "isXenon": false,
+  "keyVaultReferenceIdentity": "SystemAssigned",
+  "kind": "functionapp,linux",
+  "lastModifiedTimeUtc": "2024-02-28T18:08:54.083333",
+  "location": "eastus2",
+  "managedEnvironmentId": null,
+  "maxNumberOfWorkers": null,
+  "name": "randomnumberfunction",
+  "outboundIpAddresses": "20.75.6.151,20.75.6.173,20.75.6.226,20.75.7.63,20.75.7.72,20.75.7.84,20.49.97.20",
+  "possibleOutboundIpAddresses": "20.75.6.151,20.75.6.173,20.75.6.226,20.75.7.63,20.75.7.72,20.75.7.84,20.75.7.91,20.75.7.112,20.75.7.117,20.75.7.124,20.75.7.128,20.75.7.142,20.75.7.151,20.75.7.156,20.75.7.172,20.75.7.202,20.75.7.223,20.75.6.70,20.186.50.117,52.177.234.87,52.177.235.10,52.177.235.242,52.179.238.63,52.177.235.251,20.49.97.20",
+  "publicNetworkAccess": null,
+  "redundancyMode": "None",
+  "repositorySiteName": "randomnumberfunction",
+  "reserved": true,
+  "resourceConfig": null,
+  "resourceGroup": "randomnumberfunction",
+  "scmSiteAlsoStopped": false,
+  "serverFarmId": "/subscriptions/80753b76-ae60-4af6-b6f7-ba564bc88e3e/resourceGroups/randomnumberfunction/providers/Microsoft.Web/serverfarms/EastUS2LinuxDynamicPlan",
+  "siteConfig": {
+    "acrUseManagedIdentityCreds": false,
+    "acrUserManagedIdentityId": null,
+    "alwaysOn": false,
+    "antivirusScanEnabled": null,
+    "apiDefinition": null,
+    "apiManagementConfig": null,
+    "appCommandLine": null,
+    "appSettings": null,
+    "autoHealEnabled": null,
+    "autoHealRules": null,
+    "autoSwapSlotName": null,
+    "azureMonitorLogCategories": null,
+    "azureStorageAccounts": null,
+    "connectionStrings": null,
+    "cors": null,
+    "customAppPoolIdentityAdminState": null,
+    "customAppPoolIdentityTenantState": null,
+    "defaultDocuments": null,
+    "detailedErrorLoggingEnabled": null,
+    "documentRoot": null,
+    "elasticWebAppScaleLimit": null,
+    "experiments": null,
+    "fileChangeAuditEnabled": null,
+    "ftpsState": null,
+    "functionAppScaleLimit": 0,
+    "functionsRuntimeScaleMonitoringEnabled": null,
+    "handlerMappings": null,
+    "healthCheckPath": null,
+    "http20Enabled": false,
+    "http20ProxyFlag": null,
+    "httpLoggingEnabled": null,
+    "ipSecurityRestrictions": [
+      {
+        "action": "Allow",
+        "description": "Allow all access",
+        "headers": null,
+        "ipAddress": "Any",
+        "name": "Allow all",
+        "priority": 2147483647,
+        "subnetMask": null,
+        "subnetTrafficTag": null,
+        "tag": null,
+        "vnetSubnetResourceId": null,
+        "vnetTrafficTag": null
+      }
+    ],
+    "ipSecurityRestrictionsDefaultAction": null,
+    "javaContainer": null,
+    "javaContainerVersion": null,
+    "javaVersion": null,
+    "keyVaultReferenceIdentity": null,
+    "limits": null,
+    "linuxFxVersion": "",
+    "loadBalancing": null,
+    "localMySqlEnabled": null,
+    "logsDirectorySizeLimit": null,
+    "machineKey": null,
+    "managedPipelineMode": null,
+    "managedServiceIdentityId": null,
+    "metadata": null,
+    "minTlsCipherSuite": null,
+    "minTlsVersion": null,
+    "minimumElasticInstanceCount": 0,
+    "netFrameworkVersion": null,
+    "nodeVersion": null,
+    "numberOfWorkers": 1,
+    "phpVersion": null,
+    "powerShellVersion": null,
+    "preWarmedInstanceCount": null,
+    "publicNetworkAccess": null,
+    "publishingPassword": null,
+    "publishingUsername": null,
+    "push": null,
+    "pythonVersion": null,
+    "remoteDebuggingEnabled": null,
+    "remoteDebuggingVersion": null,
+    "requestTracingEnabled": null,
+    "requestTracingExpirationTime": null,
+    "routingRules": null,
+    "runtimeADUser": null,
+    "runtimeADUserPassword": null,
+    "scmIpSecurityRestrictions": [
+      {
+        "action": "Allow",
+        "description": "Allow all access",
+        "headers": null,
+        "ipAddress": "Any",
+        "name": "Allow all",
+        "priority": 2147483647,
+        "subnetMask": null,
+        "subnetTrafficTag": null,
+        "tag": null,
+        "vnetSubnetResourceId": null,
+        "vnetTrafficTag": null
+      }
+    ],
+    "scmIpSecurityRestrictionsDefaultAction": null,
+    "scmIpSecurityRestrictionsUseMain": null,
+    "scmMinTlsVersion": null,
+    "scmType": null,
+    "sitePort": null,
+    "sitePrivateLinkHostEnabled": null,
+    "storageType": null,
+    "supportedTlsCipherSuites": null,
+    "tracingOptions": null,
+    "use32BitWorkerProcess": null,
+    "virtualApplications": null,
+    "vnetName": null,
+    "vnetPrivatePortsCount": null,
+    "vnetRouteAllEnabled": null,
+    "webSocketsEnabled": null,
+    "websiteTimeZone": null,
+    "winAuthAdminState": null,
+    "winAuthTenantState": null,
+    "windowsConfiguredStacks": null,
+    "windowsFxVersion": null,
+    "xManagedServiceIdentityId": null
+  },
+  "slotSwapStatus": null,
+  "state": "Running",
+  "storageAccountRequired": false,
+  "suspendedTill": null,
+  "tags": null,
+  "targetSwapSlot": null,
+  "trafficManagerHostNames": null,
+  "type": "Microsoft.Web/sites",
+  "usageState": "Normal",
+  "virtualNetworkSubnetId": null,
+  "vnetContentShareEnabled": false,
+  "vnetImagePullEnabled": false,
+  "vnetRouteAllEnabled": false,
+  "workloadProfileName": null
+}
+
+
+====================================================================================================================================================================================
+2) (.venv) adam@anise:~/randomNumberGenerator_AzureFunction$ func azure functionapp publish RandomNumberFunction
+Output: 
+
+Getting site publishing info...
+[2024-02-28T20:06:36.216Z] Starting the function app deployment...
+Removing WEBSITE_CONTENTAZUREFILECONNECTIONSTRING app setting.
+Removing WEBSITE_CONTENTSHARE app setting.
+Creating archive for current directory...
+Performing remote build for functions project.
+Uploading 236.08 KB [#############################################################################]
+Remote build in progress, please wait...
+Updating submodules.
+Preparing deployment for commit id '25b51f39-7'.
+PreDeployment: context.CleanOutputPath False
+PreDeployment: context.OutputPath /home/site/wwwroot
+Repository path is /tmp/zipdeploy/extracted
+Running oryx build...
+Command: oryx build /tmp/zipdeploy/extracted -o /home/site/wwwroot --platform python --platform-version 3.10.4 -p packagedir=.python_packages/lib/site-packages
+Operation performed by Microsoft Oryx, https://github.com/Microsoft/Oryx
+You can report issues at https://github.com/Microsoft/Oryx/issues
+
+Oryx Version: 0.2.20230210.1, Commit: a49c8f6b8abbe95b4356552c4c884dea7fd0d86e, ReleaseTagName: 20230210.1
+
+Build Operation ID: 0f82edd780b120fe
+Repository Commit : 25b51f39-7632-499d-81c0-91a59810c227
+OS Type           : bullseye
+Image Type        : githubactions
+
+Detecting platforms...
+Detected following platforms:
+  python: 3.10.4
+Version '3.10.4' of platform 'python' is not installed. Generating script to install it...
+
+
+Source directory     : /tmp/zipdeploy/extracted
+Destination directory: /home/site/wwwroot
+
+
+Downloading and extracting 'python' version '3.10.4' to '/tmp/oryx/platforms/python/3.10.4'...
+Detected image debian flavor: bullseye.
+Downloaded in 5 sec(s).
+Verifying checksum...
+Extracting contents...
+performing sha512 checksum for: python...
+Done in 9 sec(s).
+
+image detector file exists, platform is python..
+OS detector file exists, OS is bullseye..
+Python Version: /tmp/oryx/platforms/python/3.10.4/bin/python3.10
+Creating directory for command manifest file if it does not exist
+Removing existing manifest file
+
+Running pip install...
+Done in 3 sec(s).
+[20:07:03+0000] Collecting azure-functions
+[20:07:03+0000]   Downloading azure_functions-1.18.0-py3-none-any.whl (173 kB)
+[20:07:03+0000] Collecting pytest==8.0.2
+[20:07:03+0000]   Downloading pytest-8.0.2-py3-none-any.whl (333 kB)
+[20:07:03+0000] Collecting pluggy<2.0,>=1.3.0
+[20:07:03+0000]   Downloading pluggy-1.4.0-py3-none-any.whl (20 kB)
+[20:07:03+0000] Collecting tomli>=1.0.0
+[20:07:03+0000]   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)
+[20:07:03+0000] Collecting exceptiongroup>=1.0.0rc8
+[20:07:03+0000]   Downloading exceptiongroup-1.2.0-py3-none-any.whl (16 kB)
+[20:07:03+0000] Collecting iniconfig
+[20:07:03+0000]   Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)
+[20:07:03+0000] Collecting packaging
+[20:07:03+0000]   Downloading packaging-23.2-py3-none-any.whl (53 kB)
+[20:07:04+0000] Installing collected packages: tomli, pluggy, packaging, iniconfig, exceptiongroup, pytest, azure-functions
+[20:07:04+0000] Successfully installed azure-functions-1.18.0 exceptiongroup-1.2.0 iniconfig-2.0.0 packaging-23.2 pluggy-1.4.0 pytest-8.0.2 tomli-2.0.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+WARNING: You are using pip version 21.2.4; however, version 24.0 is available.
+You should consider upgrading via the '/tmp/oryx/platforms/python/3.10.4/bin/python3.10 -m pip install --upgrade pip' command.
+Not a vso image, so not writing build commands
+Preparing output...
+
+Copying files to destination directory '/home/site/wwwroot'...
+Done in 0 sec(s).
+
+Removing existing manifest file
+Creating a manifest file...
+Manifest file created.
+Copying .ostype to manifest output directory.
+
+Done in 12 sec(s).
+Running post deployment command(s)...
+
+Generating summary of Oryx build
+Deployment Log file does not exist in /tmp/oryx-build.log
+The logfile at /tmp/oryx-build.log is empty. Unable to fetch the summary of build
+Triggering recycle (preview mode disabled).
+Linux Consumption plan has a 1.5 GB memory limit on a remote build container.
+To check our service limit, please visit https://docs.microsoft.com/en-us/azure/azure-functions/functions-scale#service-limits
+Writing the artifacts to a squashfs file
+Parallel mksquashfs: Using 1 processor
+Creating 4.0 filesystem on /home/site/artifacts/functionappartifact.squashfs, block size 131072.
+
+[===============================================================|] 432/432 100%
+
+Exportable Squashfs 4.0 filesystem, gzip compressed, data block size 131072
+        compressed data, compressed metadata, compressed fragments,
+        compressed xattrs, compressed ids
+        duplicates are removed
+Filesystem size 1440.48 Kbytes (1.41 Mbytes)
+        33.35% of uncompressed filesystem size (4319.03 Kbytes)
+Inode table size 4515 bytes (4.41 Kbytes)
+        28.04% of uncompressed inode table size (16100 bytes)
+Directory table size 4776 bytes (4.66 Kbytes)
+        36.53% of uncompressed directory table size (13075 bytes)
+Number of duplicate files found 22
+Number of inodes 503
+Number of files 444
+Number of fragments 40
+Number of symbolic links  0
+Number of device nodes 0
+Number of fifo nodes 0
+Number of socket nodes 0
+Number of directories 59
+Number of ids (unique uids + gids) 1
+Number of uids 1
+        root (0)
+Number of gids 1
+        root (0)
+Creating placeholder blob for linux consumption function app...
+SCM_RUN_FROM_PACKAGE placeholder blob scm-latest-randomnumberfunction.zip located
+Uploading built content /home/site/artifacts/functionappartifact.squashfs for linux consumption function app...
+Resetting all workers for randomnumberfunction.azurewebsites.net
+Deployment successful. deployer = Push-Deployer deploymentPath = Functions App ZipDeploy. Extract zip. Remote build.
+Remote build succeeded!
+[2024-02-28T20:07:18.801Z] Syncing triggers...
+Functions in randomnumberfunction:
+    rand16ints - [httpTrigger]
+        Invoke url: https://randomnumberfunction.azurewebsites.net/api/rand16ints
+
+    rand32ints - [httpTrigger]
+        Invoke url: https://randomnumberfunction.azurewebsites.net/api/rand32ints
+
+    rand64ints - [httpTrigger]
+        Invoke url: https://randomnumberfunction.azurewebsites.net/api/rand64ints
+
+    randbytes - [httpTrigger]
+        Invoke url: https://randomnumberfunction.azurewebsites.net/api/randbytes
+
+    randuints - [httpTrigger]
+        Invoke url: https://randomnumberfunction.azurewebsites.net/api/randuints

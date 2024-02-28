@@ -10,12 +10,12 @@ Published to Azure and available at:
 
     rand32ints - [httpTrigger]
         Invoke url: https://randomnumberfunction.azurewebsites.net/api/rand32ints
-        or https://randomnumberfunction.azurewebsites.net/api/rand16ints?count=10000&output=string 
-        or https://randomnumberfunction.azurewebsites.net/api/rand16ints?count=10000&output=json 
+        or https://randomnumberfunction.azurewebsites.net/api/rand32ints?count=10000&output=string 
+        or https://randomnumberfunction.azurewebsites.net/api/rand32ints?count=10000&output=json 
 
 These support the same parameters as above: 
     rand16ints - [httpTrigger]
-        Invoke url: https://randomnumberfunction.azurewebsites.net/api/rand64ints
+        Invoke url: https://randomnumberfunction.azurewebsites.net/api/rand16ints
 
     randbytes - [httpTrigger]
         Invoke url: https://randomnumberfunction.azurewebsites.net/api/randbytes

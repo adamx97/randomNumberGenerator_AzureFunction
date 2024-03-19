@@ -173,13 +173,9 @@ def LinkedInCurvedBackground(
             # slope at x = x/2pValue
             slope = leftside / (2 * pValue)
             slopePercent = slope / 100
-            if slope >= 0:
-                # width of tile when slope is positive: slope = tangent (theta), theta = arctan(s), adjacent = hypotenuse * cos (theta)
-                theta = math.atan(slopePercent)
-                adjacent = int(squaresize * math.cos(theta))
-            if slope < 0:
-                theta = math.atan(abs(slopePercent))
-                adjacent = int(squaresize * math.cos(theta))
+            # width of tile when slope is positive: slope = tangent (theta), theta = arctan(s), adjacent = hypotenuse * cos (theta)
+            theta = math.atan(slopePercent)
+            adjacent = int(squaresize * math.cos(theta))
             if pixel:
                 for x1 in range(
                     imageLeftCursor,
